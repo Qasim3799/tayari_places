@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    #wrapper {
+      display: flex;
+      gap: 15px;
+    }
+
+    .img {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    #wrapper a {
+      position: relative;
+      height: 450px;
+      width: 310px;
+      transition: transform 0.3s ease;
+    }
+
+    #wrapper a:hover {
+      transform: translateY(-20px) scaleY(1.1);
+    }
+
+    .black-transparent-bg {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 2;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0,0,0, 0.4);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: flex-end;
+      padding: 50px 20px;
+    }
+
+    .black-transparent-bg > p {
+      font-size: 30px;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .black-transparent-bg p {
+      color: white;
+    }
+
+    .divider,
+    .location,
+    .sect4-grid-overlay-text {
+      display: none;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
+    }
+
+    #wrapper a:hover .divider,
+    #wrapper a:hover .location,
+    #wrapper a:hover .sect4-grid-overlay-text {
+      display: flex;
+      transform: translateY(0);
+      animation: slideUp 0.5s ease forwards;
+    }
+
+    .divider {
+      width: 100px;
+      height: 2px;
+      background-color: orange;
+    }
+
+    .sect4-grid-overlay-text-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      color: whitesmoke;
+      line-height: 20px;
+      margin: 2px 0;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 16px; 
+    }
+
+    .location {
+      font-weight: bold;
+    }
+
+    @media only screen and (max-width: 600px) {
+        #wrapper a {
+  position: relative;
+  height: 450px;
+  width: 310px;
+  transition: transform 0.3s ease;
+  transform-origin: bottom; 
+}
+
+#wrapper a:hover {
+  transform: scale(1.2); 
+}
+
+      #wrapper a:nth-of-type(1) {
+        z-index: 4;
+        bottom: 30px;
+      }
+
+      #wrapper a:nth-of-type(2) {
+        z-index: 3;
+        transform: scaleX(0.95);
+        bottom: 20px;
+      }
+
+      #wrapper a:nth-of-type(3) {
+        z-index: 2;
+        transform: scaleX(0.9);
+        bottom: 10px;
+      }
+
+      #wrapper a:nth-of-type(4) {
+        z-index: 1;
+        transform: scaleX(0.85);
+        bottom: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <!-- Card 1 -->
+    <a href="#">
+      <img class="img" src="https://cdn.prod.website-files.com/67247f5de52e4a1a1589e509/672bc625287aa683664e1ba4_Americas%20(1).webp">
+      <div class="black-transparent-bg">
+        <p>USA</p>
+        <div class="sect4-grid-overlay-text-wrapper">
+          <p class="location">New York</p>
+          <div class="divider"></div>
+          <p class="sect4-grid-overlay-text">
+            Patience empowers long-term vision. Embracing the time it takes to build impactful outcomes allows for reflection, iteration, and growth — foundations of sustainable success and meaningful innovation.
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Card 2 -->
+    <a href="#">
+      <img class="img" src="https://cdn.prod.website-files.com/67247f5de52e4a1a1589e509/672bc625097c1bf3caef58f7_Europe.webp">
+      <div class="black-transparent-bg">
+        <p>PARIS</p>
+        <div class="sect4-grid-overlay-text-wrapper">
+          <p class="location">France</p>
+          <div class="divider"></div>
+          <p class="sect4-grid-overlay-text">
+            Patience empowers long-term vision. Embracing the time it takes to build impactful outcomes allows for reflection, iteration, and growth — foundations of sustainable success and meaningful innovation.
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Card 3 -->
+    <a href="#">
+      <img class="img" src="https://cdn.prod.website-files.com/67247f5de52e4a1a1589e509/67371697800417151b7f733d_Frame%2056%20(2).avif">
+      <div class="black-transparent-bg">
+        <p>MENA</p>
+        <div class="sect4-grid-overlay-text-wrapper">
+          <p class="location">Dubai</p>
+          <div class="divider"></div>
+          <p class="sect4-grid-overlay-text">
+            Patience empowers long-term vision. Embracing the time it takes to build impactful outcomes allows for reflection, iteration, and growth — foundations of sustainable success and meaningful innovation.
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Card 4 -->
+    <a href="#">
+      <img class="img" src="https://cdn.prod.website-files.com/67247f5de52e4a1a1589e509/67371696ee850217af86985b_Frame%2053.avif">
+      <div class="black-transparent-bg">
+        <p>Europe</p>
+        <div class="sect4-grid-overlay-text-wrapper">
+          <p class="location">Berlin</p>
+          <div class="divider"></div>
+          <p class="sect4-grid-overlay-text">
+            Patience empowers long-term vision. Embracing the time it takes to build impactful outcomes allows for reflection, iteration, and growth — foundations of sustainable success and meaningful innovation.
+          </p>
+        </div>
+      </div>
+    </a>
+  </div>
+</body>
+</html>
